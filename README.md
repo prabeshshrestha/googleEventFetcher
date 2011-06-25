@@ -1,3 +1,11 @@
+Google Calendar Event Fetcher
+=============================
+
+Fetches events from google calendar .
+
+Usage:
+-----
+
 1> Host the code somewhere (eg. example.com/google )
 
 2>Get the calendar feed url for your calendar
@@ -15,4 +23,8 @@
 
 3>Save the events in the database in saveevents.php
 
+Contribution:
+------------
+1. Please let me know the issues at prabesh708@gmail.com
+2. Or you can fork the project / fix the issue / send me a pull request.
 

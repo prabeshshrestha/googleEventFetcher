@@ -1,4 +1,7 @@
 <?php
+/*
+* @author Prabesh Shrestha prabesh708@gmail.com
+*/
 
 // Your private feed - which you get by right-clicking the 'xml' button in the 'Private Address' section of 'Calendar Details'.
 if (!isset($calendarfeed)) {$calendarfeed = "https://www.google.com/calendar/feeds/cridland.net_9nfm5orp01h05bnhtd0j0og5g0%40group.calendar.google.com/private-239a285fcf327d9ba6b1f20712498a6a/basic"; }
@@ -70,7 +73,7 @@ href="mailto:\\1">\\1</a>', $description);
     $gCalDateEnd = date($dateformat, strtotime($ns_gd->when->attributes()->endTime)-$offset);
     $gCalStartTime = gmdate($timeformat, strtotime($ns_gd->when->attributes()->startTime)-$offset);
     $gCalEndTime = gmdate($timeformat,strtotime($ns_gd->when->attributes()->endTime)-$offset);
-                   
+
     // Now, let's run it through some str_replaces, and store it with the date for easy sorting later
     $temp_event=$event_display;
     $temp_dateheader=$event_dateheader;
@@ -97,7 +100,7 @@ href="mailto:\\1">\\1</a>', $description);
     $temp_event=str_replace("&lt;","<",$temp_event);
     $temp_event=str_replace("&gt;",">",$temp_event);
     $temp_event=str_replace("&quot;","\"",$temp_event);
-                   
+
     if (($items_to_show>0 AND $items_shown<$items_to_show)) {
                 if ($GroupByDate) {if ($gCalDate!=$old_date) { echo $temp_dateheader; $old_date=$gCalDate;}}
         echo $temp_event;
@@ -107,3 +110,4 @@ href="mailto:\\1">\\1</a>', $description);
 
 if (!$items_shown) { echo $event_error; }
 ?>
+

@@ -1,4 +1,8 @@
 <?php
+/*
+* @author Prabesh Shrestha prabesh708@gmail.com
+*/
+
 
 // Calendar feed URL must be saved in the databases to fetch events form the same calendar in the future
 $calendarURL = trim($_POST['calendarfeed']);
@@ -19,7 +23,7 @@ $three_months_from_today = date("Y-m-d\Th:i:sP", time() + $three_months_in_secon
 
 $feed = $calendarURL;
 //Can be used later to filter out the list of events
-/* "/full?orderby=starttime&singleevents=true&" . 
+/* "/full?orderby=starttime&singleevents=true&" .
   "start-min=" . $three_months_ago . "&" .
   "start-max=" . $three_months_from_today; */
 
@@ -75,3 +79,4 @@ foreach ($entries as $entry) {
     echo "<br/><br/> <br/> ";
 }
 ?>
+
